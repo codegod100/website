@@ -1,0 +1,16 @@
+[workspace]
+name = "website"
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-arm64", "osx-64", "win-64"]
+
+[dependencies]
+python = "3.12.*"
+mkdocs-material = ">=9.5"
+
+[tasks]
+serve = "mkdocs serve"
+build = "mkdocs build --strict --site-dir site"
+deploy = "modal deploy modal_app.py"
+
+[pypi-dependencies]
+modal = ">=1.6"
